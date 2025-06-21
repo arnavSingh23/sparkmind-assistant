@@ -53,26 +53,19 @@ $ uvicorn app.main:app --reload
 sparkmind-assistant/
 ├── backend/
 │   ├── app/
-│   │   ├── main.py            # FastAPI entrypoint
-│   │   ├── routes/            # API endpoints
-│   │   ├── services/          # LLM + vector logic
-│   │   └── models/            # Pydantic schemas
-│   ├── vector_store/          # FAISS index and embedding logic
-│   └── tests/                 # Backend tests
-├── frontend/
-│   ├── public/                # Static assets
-│   ├── src/
-│   │   ├── components/        # React/Vue/Svelte components (your choice)
-│   │   ├── pages/             # Routes (e.g., Home.tsx or Index.vue)
-│   │   ├── App.tsx            # App entrypoint
-│   │   └── main.tsx           # Mounting logic
-│   ├── vite.config.ts         # Build config (or similar)
-│   └── package.json           # Frontend deps
-├── sample_docs/               # Mock markdown/pdf/txt files
-├── .env.example
+│   │   ├── main.py            # Entrypoint for FastAPI
+│   │   ├── routes/            # Future route handlers
+│   │   ├── services/          # Business logic (e.g., querying FAISS)
+│   │   └── models/            # Pydantic schemas and internal models
+│   ├── vector_store/          # FAISS indexing logic
+│   └── tests/                 # Future unit/integration tests
+├── frontend/                  # Optional interface for PMs/staff
+│   └── (placeholder.md)       # Add real code later
+├── sample_docs/               # Fictitious markdown/pdfs for testing
+├── .gitignore
 ├── requirements.txt
-└── README.md
-
+├── README.md
+└── LICENSE
 ```
 
 ---
