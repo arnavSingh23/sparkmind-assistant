@@ -54,15 +54,25 @@ sparkmind-assistant/
 ├── backend/
 │   ├── app/
 │   │   ├── main.py            # FastAPI entrypoint
-│   │   ├── routes/
-│   │   ├── services/
-│   │   └── models/
+│   │   ├── routes/            # API endpoints
+│   │   ├── services/          # LLM + vector logic
+│   │   └── models/            # Pydantic schemas
 │   ├── vector_store/          # FAISS index and embedding logic
-│   └── tests/
-├── sample_docs/               # Mock files (markdown, pdf, txt)
+│   └── tests/                 # Backend tests
+├── frontend/
+│   ├── public/                # Static assets
+│   ├── src/
+│   │   ├── components/        # React/Vue/Svelte components (your choice)
+│   │   ├── pages/             # Routes (e.g., Home.tsx or Index.vue)
+│   │   ├── App.tsx            # App entrypoint
+│   │   └── main.tsx           # Mounting logic
+│   ├── vite.config.ts         # Build config (or similar)
+│   └── package.json           # Frontend deps
+├── sample_docs/               # Mock markdown/pdf/txt files
 ├── .env.example
 ├── requirements.txt
 └── README.md
+
 ```
 
 ---
