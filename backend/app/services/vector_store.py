@@ -22,10 +22,24 @@ def add_to_index(embeddings: list[np.ndarray], texts: list[str]):
 def search_index(query_embedding: np.ndarray, top_k: int = 5):
     """Search FAISS index for top_k closest vectors."""
     query_embedding = np.array([query_embedding]).astype("float32")
-    distances, indices = index.search(query_embedding, top_k)
+    distances, indices = index.search(query_embedding, top_k) 
     
     results = []
     for idx in indices[0]:
         if idx < len(stored_texts):
             results.append(stored_texts[idx])
     return results
+
+def retrieve_relevant_chunks(query_embedding: list[float], top_k: int = 5) -> list[str]:
+    """
+    Wrapper to search the index using a list[float] instead of np.ndarray
+
+    Parameters:
+        query_embedding (list[float]): The embedded user query
+        top_k (int): How many chunks to retrieve
+
+    Returns:
+        list[str]: Top-k matching document chunks
+    """
+    query_vector = np.array(query_embedding).astype("float32")
+    return search_index(query_vector, top_k=top_k)
